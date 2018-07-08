@@ -1,0 +1,21 @@
+<!-- INíCIO do CONTEÚDO -->
+     <section class="content-header">
+       <h1>
+         Tipos de Eletrônicos
+       </h1>
+     </section>
+
+
+     <section class="content">
+
+       <div class="row">
+               <div *ngFor="let eletronico of eletronicos" class="col-sm-6 col-xs-12">
+                 <mt-eletronico [eletronico]="eletronico"></mt-eletronico>
+                 <!-- /.info-box -->
+               </div>
+               <!-- /.col -->
+             </div>
+
+
+
+     </section>
