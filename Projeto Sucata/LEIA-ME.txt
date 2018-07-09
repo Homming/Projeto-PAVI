@@ -1,0 +1,4 @@
+Para rodar o projeto é necessário fazer os seguintes passos:
+1º Instale no seu computador o node.js
+2º Após instalar o node, utilize no console o comando npm install @angular/cli
+3º Instale o Back-end da aplicação na pasta do projeto usando o comando. npm install -g json-server

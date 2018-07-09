@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Eletronico } from "app/eletronicos/eletronico/eletronico.model";
+import { EletronicosService } from "app/eletronicos/eletronicos.service";
+
+
 
 @Component({
   selector: 'mt-eletronicos',
@@ -7,29 +10,12 @@ import { Eletronico } from "app/eletronicos/eletronico/eletronico.model";
 })
 export class EletronicosComponent implements OnInit {
 
-  eletronicos: Eletronico[] = [
-  {
-    id: "bat-eria",
-    name: "Bateria",
-    descricao: "Bateria para solicitação de coleta",
-    imagePath: "assets/img/eletronicos/bateria.jpg"
-  },
-  {
-    id: "placa-mae",
-    name: "Placa Mãe",
-    descricao: "Placa Mãe para solicitação de coleta",
-    imagePath: "assets/img/eletronicos/placas.jpg"
-  },
-  {
-    id: "Gabi-nete",
-    name: "Gabinete",
-    descricao: "Gabinete para solicitação de coleta",
-    imagePath: "assets/img/eletronicos/gabinete.jpg"
-  }
-]
-  constructor() { }
+  eletronicos: Eletronico[]
+
+  constructor(private eletronicosService: EletronicosService   ) { }
 
   ngOnInit() {
+    this.eletronicos = this.eletronicosService.eletronicos()
   }
 
 }

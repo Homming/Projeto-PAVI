@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { EletronicosComponent } from './eletronicos/eletronicos.component';
 import { EletronicoComponent } from './eletronicos/eletronico/eletronico.component';
+import { EletronicosService } from './eletronicos/eletronicos.service'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { EletronicoComponent } from './eletronicos/eletronico/eletronico.compone
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [],
+  providers: [EletronicosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
