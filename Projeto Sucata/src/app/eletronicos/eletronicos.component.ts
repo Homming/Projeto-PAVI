@@ -15,7 +15,7 @@ export class EletronicosComponent implements OnInit {
   constructor(private eletronicosService: EletronicosService   ) { }
 
   ngOnInit() {
-    this.eletronicos = this.eletronicosService.eletronicos()
+    this.eletronicosService.eletronicos().subscribe(eletronicos => this.eletronicos = eletronicos)
   }
 
 }

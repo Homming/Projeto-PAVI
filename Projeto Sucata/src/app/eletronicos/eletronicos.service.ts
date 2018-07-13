@@ -1,34 +1,26 @@
+import {Injectable} from '@angular/core'
+import {Http} from '@angular/http'
+
+import {Observable} from 'rxjs/Observable'
+import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/catch'
+
 import {Eletronico} from './eletronico/eletronico.model'
 
+import {ELE_API} from '../app.api'
+import {ErrorHandler} from '../app.error-handler'
+
+@Injectable()
 export class EletronicosService {
 
-  eletro: Eletronico[] = [
-  {
-    id: "bat-eria",
-    name: "Bateria",
-    descricao: "Bateria para solicitação de coleta",
-    imagePath: "assets/img/eletronicos/bateria.jpg"
-  },
-  {
-    id: "placa-mae",
-    name: "Placa Mãe",
-    descricao: "Placa Mãe para solicitação de coleta",
-    imagePath: "assets/img/eletronicos/placas.jpg"
-  },
-  {
-    id: "Gabi-nete",
-    name: "Gabinete",
-    descricao: "Gabinete para solicitação de coleta",
-    imagePath: "assets/img/eletronicos/gabinete.jpg"
-  }
-]
 
-  constructor (){
+
+  constructor (private http: Http){
 
   }
 
-  eletronicos(): Eletronico[] {
-    return this.eletro;
+  eletronicos(): Observable<Eletronico[]> {
+    return this.http.get(`${ELE_API}/eletronicos`).map(response => response.json()).catch(ErrorHandler.handleError)
   }
 
 }
