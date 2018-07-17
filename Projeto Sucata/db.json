@@ -25,7 +25,7 @@
       "hours": "Coletamos de segunda à sexta, de 8h às 18h"
     }
   ],
-  "adicionar": [
+  "menu": [
     {
       "id": "sell",
       "imagePath": "assets/img/add/plus.png",
@@ -56,31 +56,36 @@
       "name": "Julia",
       "date": "2017-01-23T18:25:43",
       "comments": "Tudo muito rápido, rápido recolhimento",
-      "eletronicoId": "gabi-nete"
+      "eletronicoId": "gabi-nete",
+      "curtiu": 3.0
     },
     {
       "name": "Aline",
       "date": "2016-12-12T18:25:43",
       "comments": "NÃO recomendo. não levaram os equipamentos como devia",
-      "restaurantId": "gabi-nete"
+      "eletronicoId": "gabi-nete",
+      "curtiu": 0.0
     },
     {
       "name": "Renata",
       "date": "2016-12-12T18:25:43",
       "comments": "TOPZINHO, ASSANHADO, E O SHORT? PIKI ZIKA",
-      "restaurantId": "placa-mãe"
+      "eletronicoId": "placa-mãe",
+      "curtiu": 4.0
     },
     {
       "name": "Renata",
       "date": "2016-12-12T18:25:43",
       "comments": "brinks, curti o atendimento xd.",
-      "restaurantId": "placa-mãe"
+      "eletronicoId": "placa-mãe",
+      "curtiu": 4.0
     },
     {
       "name": "Daniela",
       "date": "2017-01-23T18:25:43",
       "comments": "Ainda bem que eles vieram, a bateria parecia uma bomba de fusão nuclear, tava pra explodir KKKK XD",
-      "restaurantId": "bat-eria"
+      "eletronicoId": "bat-eria",
+      "curtiu": 5.0
     }
   ],
   "orders": []
