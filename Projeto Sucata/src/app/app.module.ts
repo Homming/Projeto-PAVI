@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
@@ -17,6 +17,8 @@ import { TipoComponent } from './eletronico-detail/tipo/tipo.component';
 import { MenuComponent } from './eletronico-detail/menu/menu.component';
 import { MenuItemComponent } from './eletronico-detail/menu-item/menu-item.component';
 import { ReviewsComponent } from './eletronico-detail/reviews/reviews.component';
+import {MenuCartService} from './eletronico-detail/menu/menu-cart.service'
+
 
 @NgModule({
   declarations: [
@@ -37,7 +39,7 @@ import { ReviewsComponent } from './eletronico-detail/reviews/reviews.component'
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [EletronicosService],
+  providers: [EletronicosService, MenuCartService, {provide: LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
