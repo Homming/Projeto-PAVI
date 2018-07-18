@@ -17,10 +17,18 @@
       </ul>
     </div>
     <!-- /.navbar-collapse -->
-    <div class="pull-right" style="margin-top:12px;">
-      Logue aqui
+    <div *ngIf="afAuth.user | async as user; else showLogin">
+      <img src="{{ user.photoURL }}" style="height:10%; width: 10%">
+      <h1>Hello {{ user.displayName }}!</h1>
+      <button (click)="logout()">Logout</button>
     </div>
-
+    
+    <ng-template #showLogin>
+      <div class="pull-right" style="margin-top:12px;">
+        <button (click)="login()">Login com Google</button>
+        <button (click)="loginfb()">Login com FB</button>
+      </div>
+    </ng-template>
   </div>
 </nav>
 </header>

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import {ROUTES} from './app.routes'
 
@@ -17,7 +18,13 @@ import { TipoComponent } from './eletronico-detail/tipo/tipo.component';
 import { MenuComponent } from './eletronico-detail/menu/menu.component';
 import { MenuItemComponent } from './eletronico-detail/menu-item/menu-item.component';
 import { ReviewsComponent } from './eletronico-detail/reviews/reviews.component';
-import {MenuCartService} from './eletronico-detail/menu/menu-cart.service'
+import { MenuCartService } from './eletronico-detail/menu/menu-cart.service';
+
+import { environment } from '../environments/environment';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+// import { AngularFireStorageModule, AngularFireStorage } from 'angularfire2/storage';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 
 @NgModule({
@@ -35,6 +42,10 @@ import {MenuCartService} from './eletronico-detail/menu/menu-cart.service'
     ReviewsComponent
   ],
   imports: [
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFireDatabaseModule, 
     BrowserModule,
     HttpModule,
     RouterModule.forRoot(ROUTES)
