@@ -23,11 +23,7 @@ import { MenuCartService } from './eletronico-detail/menu/menu-cart.service';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-// import { AngularFireStorageModule, AngularFireStorage } from 'angularfire2/storage';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { EletronicosTiposComponent } from './eletronicos-tipos/eletronicos-tipos.component';
-import { EletronicoTipoComponent } from './eletronicos-tipos/eletronico-tipo/eletronico-tipo.component';
-import { EletronicoTipoListComponent } from './eletronicos-tipos/eletronico-tipo-list/eletronico-tipo-list.component';
 
 
 @NgModule({
@@ -42,10 +38,7 @@ import { EletronicoTipoListComponent } from './eletronicos-tipos/eletronico-tipo
     TipoComponent,
     MenuComponent,
     MenuItemComponent,
-    ReviewsComponent,
-    EletronicosTiposComponent,
-    EletronicoTipoComponent,
-    EletronicoTipoListComponent
+    ReviewsComponent
   ],
   imports: [
     FormsModule,

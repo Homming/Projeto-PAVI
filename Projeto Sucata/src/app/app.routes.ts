@@ -7,8 +7,6 @@ import {AboutComponent} from './about/about.component'
 import {TipoComponent} from './eletronico-detail/tipo/tipo.component'
 import {ReviewsComponent} from './eletronico-detail/reviews/reviews.component'
 
-import {EletronicosTiposComponent} from './eletronicos-tipos/eletronicos-tipos.component'
-
 export const ROUTES: Routes = [
   {path:'', component: HomeComponent},
   {path:'eletronicos', component: EletronicosComponent},
