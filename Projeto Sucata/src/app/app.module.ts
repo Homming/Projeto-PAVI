@@ -24,6 +24,9 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { PedidosComponent } from './pedidos/pedidos.component';
+import { PedidoComponent } from './pedidos/pedido/pedido.component';
+import { PedidoListComponent } from './pedidos/pedido-list/pedido-list.component';
 
 
 @NgModule({
@@ -38,7 +41,10 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     TipoComponent,
     MenuComponent,
     MenuItemComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    PedidosComponent,
+    PedidoComponent,
+    PedidoListComponent
   ],
   imports: [
     FormsModule,
