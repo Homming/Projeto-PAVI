@@ -25,6 +25,9 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 // import { AngularFireStorageModule, AngularFireStorage } from 'angularfire2/storage';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { EletronicosTiposComponent } from './eletronicos-tipos/eletronicos-tipos.component';
+import { EletronicoTipoComponent } from './eletronicos-tipos/eletronico-tipo/eletronico-tipo.component';
+import { EletronicoTipoListComponent } from './eletronicos-tipos/eletronico-tipo-list/eletronico-tipo-list.component';
 
 
 @NgModule({
@@ -39,7 +42,10 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
     TipoComponent,
     MenuComponent,
     MenuItemComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    EletronicosTiposComponent,
+    EletronicoTipoComponent,
+    EletronicoTipoListComponent
   ],
   imports: [
     FormsModule,
