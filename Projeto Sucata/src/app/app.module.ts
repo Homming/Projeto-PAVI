@@ -27,6 +27,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { PedidoComponent } from './pedidos/pedido/pedido.component';
 import { PedidoListComponent } from './pedidos/pedido-list/pedido-list.component';
+import { AuthService } from './auth.service';
 
 
 @NgModule({
@@ -55,7 +56,7 @@ import { PedidoListComponent } from './pedidos/pedido-list/pedido-list.component
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [EletronicosService, MenuCartService, {provide: LOCALE_ID, useValue: 'pt-BR'}],
+  providers: [EletronicosService, MenuCartService, AuthService, {provide: LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
