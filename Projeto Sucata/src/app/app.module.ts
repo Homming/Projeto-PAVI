@@ -28,6 +28,7 @@ import { PedidosComponent } from './pedidos/pedidos.component';
 import { PedidoComponent } from './pedidos/pedido/pedido.component';
 import { PedidoListComponent } from './pedidos/pedido-list/pedido-list.component';
 import { AuthService } from './auth.service';
+import { CloseOrderComponent } from './eletronico-detail/menu/close-order/close-order.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { AuthService } from './auth.service';
     ReviewsComponent,
     PedidosComponent,
     PedidoComponent,
-    PedidoListComponent
+    PedidoListComponent,
+    CloseOrderComponent
   ],
   imports: [
     FormsModule,

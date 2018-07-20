@@ -6,7 +6,7 @@ import {MenuItem} from './menu-item.model'
   templateUrl: './menu-item.component.html'
 })
 export class MenuItemComponent implements OnInit {
-
+  
   @Input() menuItem: MenuItem
   @Output() add = new EventEmitter()
   constructor() { }

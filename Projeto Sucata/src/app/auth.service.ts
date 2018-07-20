@@ -27,26 +27,26 @@ constructor(private _firebaseAuth: AngularFireAuth, private router: Router) {
 }
 
 signInWithFacebook() {
-return this._firebaseAuth.auth.signInWithPopup(
-  new firebase.auth.FacebookAuthProvider()
-)
+  return this._firebaseAuth.auth.signInWithPopup(
+    new firebase.auth.FacebookAuthProvider()
+  )
 }
 signInWithGoogle() {
-return this._firebaseAuth.auth.signInWithPopup(
-  new firebase.auth.GoogleAuthProvider()
-)
+  return this._firebaseAuth.auth.signInWithPopup(
+    new firebase.auth.GoogleAuthProvider()
+  )
 }
 
 isLoggedIn() {
-if (this.userDetails == null ) {
-  return false;
-} else {
-  return true;
-}
+  if (this.userDetails == null ) {
+    return false;
+  } else {
+    return true;
+  }
 }
 logout() {
-this._firebaseAuth.auth.signOut()
-.then((res) => this.router.navigate(['/']));
-}
+  this._firebaseAuth.auth.signOut()
+  .then((res) => this.router.navigate(['/']));
+  }
 }
 
