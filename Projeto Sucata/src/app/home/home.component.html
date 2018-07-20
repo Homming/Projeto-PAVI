@@ -1,7 +1,7 @@
 <!-- INÍCIO DO CONTEÚDO -->
      <section class="content-header"></section>
      <section class="content">
-       <div class="jumbotron welcome-jumbotron">
+       <div *ngIf="!authService.isLoggedIn()" class="jumbotron welcome-jumbotron">
           <h1>Bem vindo ao ELEHELP!</h1>
           <p>
             Está com lixo Eletrônico? Solicite recolhimento.
@@ -9,8 +9,7 @@
          <p>
           Por Favor, é necessário que se faça login para prosseguir.
         </p>
-        
-         <div *ngIf="!authService.isLoggedIn()" class="form-group">
+         <div  class="form-group">
           <button type="buton" class="btn btn-block" (click)="signInWithFacebook()">
             <i class="fa fa-facebook" aria-hidden="true"></i> 
             Login with Facebook
@@ -20,9 +19,16 @@
             Login with Google
           </button>
           </div>   
+       </div>
 
-          <div *ngIf="authService.isLoggedIn()" class="form-group">
-              <a class="btn btn-lg btn-primary" href="" role="button" (click)="authService.logout()">Deslogar</a>
+       <div *ngIf="authService.isLoggedIn()" class="jumbotron welcome-jumbotron">
+          <h1>Bem vindo ao ELEHELP!</h1>
+          <p>
+            Está com lixo Eletrônico? Solicite recolhimento.
+          </p>
+
+          <div  class="form-group">
+              <a class="btn btn-primary btn-lg" [routerLink]="['/eletronicos']">Tipos de Eletrônicos</a>
           </div> 
        </div>
      </section>

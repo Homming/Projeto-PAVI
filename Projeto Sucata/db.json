@@ -23,6 +23,14 @@
       "imagePath": "assets/img/eletronicos/gabinete.jpg",
       "about": "Coleta de carcaças de computador",
       "hours": "Coletamos de segunda à sexta, de 8h às 18h"
+    },
+    {
+      "id": "pi-lha",
+      "name": "Pilhas",
+      "descricao": "Pilhas Alcalinas",
+      "imagePath": "assets/img/eletronicos/pilhas.jpg",
+      "about": "Coleta de Pilhas, Quantidade Mínima: 30",
+      "hours": "Coletamos de segunda à sexta, de 8h às 18h"
     }
   ],
   "menu": [
@@ -44,6 +52,14 @@
     },
     {
       "id": "sell3",
+      "imagePath": "assets/img/add/plus.png",
+      "name": "Adicionar",
+      "description": "Adicionar pilhas para recolhimento",
+      "price": 0.1,
+      "eletronicoId": "pi-lha"
+    },
+    {
+      "id": "sell4",
       "imagePath": "assets/img/add/plus.png",
       "name": "Adicionar",
       "description": "Adicionar gabinete para recolhimento",

@@ -1,4 +1,4 @@
-  <div class="jumbotron">
+  <div *ngIf="authService.isLoggedIn()" class="jumbotron">
     <h1>Bem Vindo(a)</h1>
     <p>Selecione o tipo de eletrônico a qual deseja que efetuem o recolhimento.</p>
     <p *ngIf="!authService.isLoggedIn()">
@@ -7,20 +7,25 @@
     <p *ngIf="authService.isLoggedIn()">
       <a class="btn btn-lg btn-primary" href="" role="button" (click)="authService.logout()">Deslogar</a>
     </p>
-  </div>
+
     <section class="content-header">
-       <h1>
-         Tipos de Eletrônicos
-       </h1>
-     </section>
+        <h1>
+          Tipos de Eletrônicos
+        </h1>
+      </section>
+      <section class="content">
+        <div class="row">
+                <div *ngFor="let eletronico of eletronicos" class="col-sm-6 col-xs-12">
+                  <mt-eletronico [eletronico]="eletronico"></mt-eletronico>
+                </div>
+              </div>
+      </section>
+  </div>
+  <div *ngIf="!authService.isLoggedIn()" class="jumbotron">
+      <h1>Por Favor, Logue</h1>
+      <p *ngIf="!authService.isLoggedIn()">
+        <a class="btn btn-lg btn-primary" href="" role="button" (click)="authService.logout()">Logar</a>
+      </p>
+    </div>
 
-
-     <section class="content">
-
-       <div class="row">
-               <div *ngFor="let eletronico of eletronicos" class="col-sm-6 col-xs-12">
-                 <mt-eletronico [eletronico]="eletronico"></mt-eletronico>
-               </div>
-
-             </div>
-     </section>
+    

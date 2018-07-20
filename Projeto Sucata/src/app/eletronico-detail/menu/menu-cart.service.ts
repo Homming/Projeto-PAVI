@@ -1,11 +1,28 @@
+import { Injectable } from '@angular/core';
 import { CartItem } from "app/eletronico-detail/menu/cart-item.model";
 import { MenuItem } from "app/eletronico-detail/menu-item/menu-item.model";
 
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+
+import { Pedido } from "app/pedidos/pedido/pedido.model";
+
+@Injectable()
 export class MenuCartService {
   items: CartItem[] = []
+  pedidoList: AngularFireList<any>;
 
   clear(){
     this.items = []
+  }
+
+  constructor(private firebase: AngularFireDatabase) { }
+
+  insertPedido(pedido: Pedido){
+    this.pedidoList.push({
+      user: 'user',
+      item: CartItem,
+      price: '5.0'
+    });
   }
 
   addItem(item: MenuItem){
