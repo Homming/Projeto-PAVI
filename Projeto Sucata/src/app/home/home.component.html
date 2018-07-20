@@ -6,11 +6,12 @@
           <p>
             Está com lixo Eletrônico? Solicite recolhimento.
           </p>
-         <!-- <a class="btn btn-primary btn-lg" [routerLink]="['/eletronicos']">Tipos de Eletrônicos</a> -->
+        <!-- <a class="btn btn-primary btn-lg" [routerLink]="['/eletronicos']">Tipos de Eletrônicos</a> -->
          <p>
           Por Favor, é necessário que se faça login para prosseguir.
         </p>
-         <div class="form-group">
+        
+         <div *ngIf="!authService.isLoggedIn()" class="form-group">
           <button type="buton" class="btn btn-block" (click)="signInWithFacebook()">
             <i class="fa fa-facebook" aria-hidden="true"></i> 
             Login with Facebook
@@ -20,6 +21,10 @@
                 Login with Google
               </button>
           </div>   
+
+          <div *ngIf="authService.isLoggedIn()" class="form-group">
+              <a class="btn btn-lg btn-primary" href="" role="button" (click)="authService.logout()">Deslogar</a>
+          </div> 
        </div>
      </section>
 <!-- FIM DO CONTEÚDO -->

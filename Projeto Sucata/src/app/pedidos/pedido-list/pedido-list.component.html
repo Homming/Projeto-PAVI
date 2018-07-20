@@ -1,21 +1,27 @@
+<!--<ul class="list-group hover">
+  <li class="list-group-item" *ngFor="let pedido of pedidoList" (click)="onItemClick(pedido)">
+    {{pedido.name}} - {{pedido.item}}
+  </li>
+</ul> -->
 <br><br>
 <div class="card">
     <div class="card-body">
-      <h6 class="text-center">
+      <h3 class="text-center">
         Lista de Pedidos
-      </h6>
+      </h3>
       <table class="table table-sm table-hover">
         <tbody>
-          <tr *ngFor="let pedido of pedidoList">
+          <tr *ngFor="let pedido of pedidolist">
             <td>{{pedido.user}}</td>
             <td>{{pedido.item}}</td>
             <td>{{pedido.price}}</td>
             <td>
-              <a class="btn btn-warning text-white" (click)="onEdit(pedido)">
-                  <i class="far fa-edit"></i>
+              <a class="btn btn-default" (click)="onItemClick(pedido)">
+                  Editar
               </a>
-              <a class="btn btn-dark text-white" (click)="onDelete(pedido.$key)">
-                  <i class="fas fa-trash-alt"></i>
+
+              <a class="btn btn-default" (click)="onDelete(pedido.$key)">
+                  Deletar
               </a>
             </td>
           </tr>

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 import { PedidoService } from "app/pedidos/pedido.service";
-import { Pedido } from "app/pedidos/pedido/pedido.model";
+//import { Pedido } from "app/pedidos/pedido/pedido.model";
 
 @Component({
   selector: 'mt-pedido',
@@ -10,29 +10,38 @@ import { Pedido } from "app/pedidos/pedido/pedido.model";
 })
 export class PedidoComponent implements OnInit {
 
-  constructor(
-    private pedidoService: PedidoService,
-  ) { }
+  constructor(private pedidoService: PedidoService) { }
 
   ngOnInit() {
-    this.pedidoService.getPedidos();
     this.resetForm();
   }
 
-  onSubmit(pedidoForm: NgForm){
-    if(pedidoForm.value.$key == null)
-      this.pedidoService.insertPedido(pedidoForm.value);
+  onSubmit(form: NgForm){
+    if(form.value.$key == null)
+      this.pedidoService.insertPedido(form.value);
     else
-      this.pedidoService.updatePedido(pedidoForm.value);
+      this.pedidoService.updatePedido(form.value);
 
-    this.resetForm(pedidoForm);
+    this.resetForm(form);
   }
 
   //Limpar Campos
-  resetForm(pedidoForm?: NgForm){
-    if(pedidoForm != null)
-      pedidoForm.reset();
-      this.pedidoService.selectedPedido = new Pedido();
+  resetForm(form?: NgForm) {
+    if (form != null)
+      form.reset();
+    this.pedidoService.selectedPedido = {
+      $key: null,
+      user: '',
+      item: '',
+      price: 0,
+    }
+  }
+
+  onDelete(form: NgForm) {
+    if (confirm('Tem Certeza ? Ação irreversível.') == true) {
+      this.pedidoService.deletePedido(form.value.$key);
+      this.resetForm(form);
+    }
   }
 
 }

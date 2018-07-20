@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+
 import { Pedido } from "app/pedidos/pedido/pedido.model";
 
 /*@Injectable({
@@ -7,34 +8,33 @@ import { Pedido } from "app/pedidos/pedido/pedido.model";
 })*/
 @Injectable()
 export class PedidoService {
-
   pedidoList: AngularFireList<any>;
   selectedPedido: Pedido = new Pedido();
-
   constructor(private firebase: AngularFireDatabase) { }
     
-    getPedidos(){
-      return this.pedidoList = this.firebase.list('pedidos');
+    getPedidos() {
+      this.pedidoList = this.firebase.list('pedidos');
+      return this.pedidoList;
     }
 
     insertPedido(pedido: Pedido){
       this.pedidoList.push({
-        name: pedido.user,
+        user: pedido.user,
         item: pedido.item,
         price: pedido.price
       });
     }
 
-    updatePedido(pedido: Pedido){
-      this.pedidoList.update(pedido.$key, {
-        name: pedido.user,
-        item: pedido.item,
-        price: pedido.price
+    updatePedido(ped: Pedido){
+      this.pedidoList.update(ped.$key, {
+        user: ped.user,
+        item: ped.item,
+        price: ped.price
       });
     }
 
-    deletePedido($key: string){
-      this.pedidoList.remove($key);
+    deletePedido(key: string){
+      this.pedidoList.remove(key);
     }
 
 }
